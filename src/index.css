@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Trebuchet MS", Roboto, Ubuntu, sans-serif, "Inter";
+    color: #131722;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.dark body,
+.dark {
+  color-scheme: dark;
+}
+
+/* TradingView typography & mono numbers */
+.tv-mono {
+  font-family: -apple-system, BlinkMacSystemFont, "Trebuchet MS", Roboto, Ubuntu, sans-serif, "JetBrains Mono";
+  font-feature-settings: "tnum" on, "lnum" on;
+}
+
+/* TradingView brand green and red */
+.tv-green-text {
+  color: #089981;
+}
+
+.tv-green-bg {
+  background-color: rgba(8, 153, 129, 0.1);
+}
+
+.tv-red-text {
+  color: #f23645;
+}
+
+.tv-red-bg {
+  background-color: rgba(242, 54, 69, 0.1);
+}
+
+/* Tick flash animations */
+@keyframes flash-green {
+  0% {
+    background-color: rgba(8, 153, 129, 0.35);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes flash-red {
+  0% {
+    background-color: rgba(242, 54, 69, 0.35);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.flash-up {
+  animation: flash-green 1s ease-out;
+}
+
+.flash-down {
+  animation: flash-red 1s ease-out;
+}
+
+/* Custom scrollbar hiding */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
